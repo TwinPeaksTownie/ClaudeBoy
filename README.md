@@ -100,6 +100,7 @@ ClaudeBoy transforms a Retroflag GPi Case 2 (Game Boy-style handheld) into a ver
                                                             ## 🎯 Core Components
 
                                                             ### Display System
+
                                                             - **DPI Interface**: 640x480 display using legacy framebuffer
                                                             - - **Mood States**: Visual feedback with customizable personas
                                                               - - **Pygame**: Display management and image rendering
@@ -117,6 +118,7 @@ ClaudeBoy transforms a Retroflag GPi Case 2 (Game Boy-style handheld) into a ver
                                                                 - | R | Tab | Tab navigation |
                                                                
                                                                 - ### AI Integration
+                                                               
                                                                 - - **SSE MCP Client**: Server-Sent Events connection to MCP servers
                                                                   - - **Claude**: AI assistant powered by Anthropic
                                                                     - - **TTS**: ElevenLabs API for voice output
@@ -168,16 +170,19 @@ ClaudeBoy transforms a Retroflag GPi Case 2 (Game Boy-style handheld) into a ver
                                                                         ## 🛠️ Troubleshooting
 
                                                                         ### Black Screen
+
                                                                         - Ensure `vc4-kms-v3d` is commented out in boot config
                                                                         - - Check DPI24 overlay is enabled
                                                                           - - Verify display timings match GPi Case 2 specs
                                                                            
                                                                             - ### No Audio
+                                                                           
                                                                             - - Check TTS server: `curl http://localhost:5000/status`
                                                                               - - Verify ElevenLabs API key is configured
                                                                                 - - Test: `python3 TTS/speak.py "Test message"`
                                                                                  
                                                                                   - ### Button Input Issues
+                                                                                 
                                                                                   - - Verify mapper service: `sudo systemctl status gpi-keyboard-mapper`
                                                                                     - - Check controller detection: `ls /dev/input/event*`
                                                                                       - - Test: `sudo evtest /dev/input/event1`
